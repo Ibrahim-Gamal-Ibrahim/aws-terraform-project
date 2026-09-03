@@ -21,3 +21,7 @@ output "app_a_id" {
 output "app_b_id" {
   value = aws_instance.app_b.id
 }
+
+output "alb_dns_name" {
+  value = aws_lb.main.dns_name
+}
