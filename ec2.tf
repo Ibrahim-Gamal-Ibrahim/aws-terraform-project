@@ -2,7 +2,7 @@
 
 resource "aws_instance" "bastion" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
 
   subnet_id = aws_subnet.public_a.id
 
@@ -24,7 +24,7 @@ resource "aws_instance" "bastion" {
 
 resource "aws_instance" "app_a" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
 
   subnet_id = aws_subnet.private_a.id
 
@@ -54,7 +54,7 @@ resource "aws_instance" "app_a" {
 
 resource "aws_instance" "app_b" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
 
   subnet_id = aws_subnet.private_b.id
 

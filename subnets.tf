@@ -1,7 +1,7 @@
 resource "aws_subnet" "public_a" {
   vpc_id = aws_vpc.main.id
 
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.public_subnet_a_cidr
 
   availability_zone = data.aws_availability_zones.available.names[0]
 
@@ -12,7 +12,7 @@ resource "aws_subnet" "public_a" {
 resource "aws_subnet" "public_b" {
   vpc_id = aws_vpc.main.id
 
-  cidr_block = "10.0.2.0/24"
+  cidr_block = var.public_subnet_b_cidr
 
   availability_zone = data.aws_availability_zones.available.names[1]
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "public_b" {
 resource "aws_subnet" "private_a" {
   vpc_id = aws_vpc.main.id
 
-  cidr_block = "10.0.11.0/24"
+  cidr_block = var.private_subnet_a_cidr
 
   availability_zone = data.aws_availability_zones.available.names[0]
 
@@ -35,7 +35,7 @@ resource "aws_subnet" "private_a" {
 resource "aws_subnet" "private_b" {
   vpc_id = aws_vpc.main.id
 
-  cidr_block = "10.0.12.0/24"
+  cidr_block = var.private_subnet_b_cidr
 
   availability_zone = data.aws_availability_zones.available.names[1]
 
